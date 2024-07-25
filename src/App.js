@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PrivateRoute from "./routes/PrivateRoute";
+import Outcomes from "./pages/Outcomes";
+import Incomes from "./pages/Incomes";
+import Dashboard from "./pages/Dashboard";
 
-function App() {
+const App = () => {
+  const isAuthenticated = true; // Aquí deberías poner la lógica real de autenticación
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<div>Login Page</div>} />
+        <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/incomes" element={<Incomes />} />
+          <Route path="/outcomes" element={<Outcomes />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
