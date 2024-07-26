@@ -1,7 +1,26 @@
-@import "variables";
+.categoryline-ilustration {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 75%;
+  margin: auto;
+
+  .categoryline-img-ilustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 81%;
+    }
+  }
+}
 
 .category-line-container {
-  padding: 0 20px;
+  // padding: 0 20px;
+  padding: 25px;
+  font-size: 14px;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 20px;
 }
 
 .container {
@@ -11,8 +30,8 @@
 }
 
 .icon {
-  width: 48px;
-  height: 48px;
+  width: 3em;
+  height: 3em;
   margin-right: 10px;
 }
 
@@ -48,5 +67,5 @@
 .amount {
   font-weight: bold;
   font-family: $font-numbers;
-  font-size: 15px;
+  font-size: 0.95em;
 }

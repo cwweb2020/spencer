@@ -16,9 +16,9 @@ const Summary = () => {
   return (
     <section className="dashboard">
       <div className="dashboard__wrapper">
-        <div className="dashboard__box1">
+        {/* <div className="dashboard__box1">
           <img src="/img/imgs/plan4.png" alt="" />
-        </div>
+        </div> */}
         <div className="dashboard__box2">
           <div className="dashboard__box2-container">
             <span className="dash-saldo-total">

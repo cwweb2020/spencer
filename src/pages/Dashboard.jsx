@@ -1,9 +1,12 @@
 import React from "react";
 import Summary from "../components/Summary";
-import DonutChart from "../components/DonutChart";
+
 import CategoryProgress from "../components/CategoryProgress";
 import { categories } from "../utils/utility";
 import FloatButton from "../components/FloatButton";
+import Divider from "@mui/material/Divider";
+import ComparitionChart from "../components/ComparitionChart";
+import GastosDonut from "../components/GastosDonut";
 
 const Dashboard = () => {
   const totalAmount = categories.reduce(
@@ -12,39 +15,64 @@ const Dashboard = () => {
   );
 
   //
-
-  //
   return (
     <>
       <br />
       <br />
       <br />
-      <br />
       <h3 className="dashboard-title">Resumen de Saldos</h3>
+      <br />
+
       <Summary />
+
+      <br />
+      <br />
+
       <div style={{ width: "60%", margin: "35px auto" }}>
-        <hr />
+        <Divider />
       </div>
+      <div className="own-devider">/</div>
+      {/* ------------- */}
+
       <h3 className="dashboard-title classified">Gastos según categorías</h3>
-      <DonutChart />
+      <GastosDonut />
       <br />
       <br />
+
+      <div style={{ width: "60%", margin: "35px auto" }}>
+        <Divider />
+      </div>
+
+      <div className="own-devider">/</div>
+      {/* ------------- */}
+      <h3 className="dashboard-title classified">Detalle de tus gastos</h3>
+      <div className="categoryline-ilustration">
+        <div className="categoryline-img-ilustration">
+          <img src="img/imgs/plan1.png" alt="" />
+        </div>
+
+        <section className="category-line-container">
+          {categories
+            .sort((a, b) => b.amount - a.amount)
+            .map((category) => (
+              <CategoryProgress
+                key={category.name}
+                category={category.name}
+                amount={category.amount}
+                total={totalAmount}
+                iconPath={category.iconPath}
+                color={category.color}
+              />
+            ))}
+        </section>
+      </div>
       <br />
       <br />
-      <section className="category-line-container">
-        {categories
-          .sort((a, b) => b.amount - a.amount)
-          .map((category) => (
-            <CategoryProgress
-              key={category.name}
-              category={category.name}
-              amount={category.amount}
-              total={totalAmount}
-              iconPath={category.iconPath}
-              color={category.color}
-            />
-          ))}
-      </section>
+      <div style={{ width: "60%", margin: "35px auto" }}>
+        <Divider />
+      </div>
+
+      <ComparitionChart />
       <div className="float-button">
         <FloatButton />
       </div>

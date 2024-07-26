@@ -66,14 +66,14 @@ const DonutChart = () => {
   };
 
   return (
-    <div style={container}>
+    <div className="donut-container" style={container}>
       <Doughnut data={data} options={options} />
     </div>
   );
 };
 
 const container = {
-  width: "44%",
+  // width: "44%",
   margin: "auto",
   height: "300px",
 };

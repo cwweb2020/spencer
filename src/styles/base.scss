@@ -13,7 +13,8 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  background: #add8e63b;
+  //  background: #add8e63b;
+  background: #c3f3c321;
 }
 
 .float-button {
@@ -22,7 +23,17 @@ body {
   bottom: 6%;
 }
 
+.comparition > canvas {
+  height: 100% !important;
+  width: 100% !important;
+}
+.own-devider {
+  margin: 15px 0;
+  opacity: 0;
+}
+
 // imports
 
 @import "./dashboard.scss";
 @import "./categoryProgress.scss";
+@import "./gastosDonuts.scss";

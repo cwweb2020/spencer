@@ -1,0 +1,28 @@
+//
+
+.gastos-donut {
+  .gastos-donut__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 70%;
+    margin: auto;
+
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 20px;
+
+    .gastos-donut__img-container {
+      justify-content: center;
+      display: flex;
+      img {
+        width: 75%;
+      }
+    }
+
+    .donut-container {
+      width: 90%;
+      margin: auto;
+      height: 300px;
+    }
+  }
+}

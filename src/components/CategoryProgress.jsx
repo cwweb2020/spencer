@@ -29,7 +29,7 @@ const CategoryProgress = ({ category, amount, total, iconPath, color }) => {
           </div>
         </div>
       </div>
-      <div className="amount">${formattedAmount}</div>
+      <span className="amount">${formattedAmount}</span>
     </div>
   );
 };
