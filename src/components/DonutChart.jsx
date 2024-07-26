@@ -66,7 +66,7 @@ const DonutChart = () => {
   };
 
   return (
-    <div style={container}>
+    <div className="donut-container" style={container}>
       <Doughnut data={data} options={options} />
     </div>
   );
