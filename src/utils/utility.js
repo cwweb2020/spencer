@@ -6,7 +6,7 @@ export const categories = [
     color: "#808080",
   },
   {
-    name: "Alimentación",
+    name: "Alimento",
     amount: 7000,
     iconPath: "/img/icons/icon-gastos/market.svg",
     color: "#9370db",
@@ -41,22 +41,22 @@ export const categories = [
     iconPath: "/img/icons/icon-gastos/entret.svg",
     color: "#33FFD4",
   },
-  // {
-  //   name: "Educación",
-  //   amount: 300,
-  //   iconPath: "/img/icons/icon-gastos/educacion.png",
-  //   color: "#FF5733",
-  // },
-  // {
-  //   name: "Deudas",
-  //   amount: 700,
-  //   iconPath: "/img/icons/icon-gastos/deudas.png",
-  //   color: "#5733FF",
-  // },
-  // {
-  //   name: "Extras",
-  //   amount: 100,
-  //   iconPath: "/img/icons/icon-gastos/extras.png",
-  //   color: "#33FF57",
-  // },
+  {
+    name: "Educación",
+    amount: 300,
+    iconPath: "/img/icons/icon-gastos/edu.svg",
+    color: "#FF5733",
+  },
+  {
+    name: "Deudas",
+    amount: 800,
+    iconPath: "/img/icons/icon-gastos/billetes.svg",
+    color: "#5733FF",
+  },
+  {
+    name: "Extras",
+    amount: 100,
+    iconPath: "/img/icons/icon-gastos/extra-expense.svg",
+    color: "#33FF57",
+  },
 ];

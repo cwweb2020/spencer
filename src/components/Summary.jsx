@@ -23,7 +23,7 @@ const Summary = () => {
           <div className="dashboard__box2-container">
             <span className="dash-saldo-total">
               <h3>Saldo Total</h3>
-              <h4>
+              <h4 style={{ color: "gold" }}>
                 <BsCurrencyDollar /> {formatAmount(numbers.total)}
               </h4>
             </span>

@@ -10,7 +10,7 @@ const DonutChart = () => {
   const data = {
     labels: [
       "Vivienda",
-      "Alimentación",
+      "Alimento",
       "Salud",
       "Gym",
       "Transporte",
