@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  // list-style: none
 }
 
 // variables
@@ -32,8 +33,13 @@ body {
   opacity: 0;
 }
 
+a {
+  // text-decoration: none;
+}
+
 // imports
 
 @import "./dashboard.scss";
 @import "./categoryProgress.scss";
 @import "./gastosDonuts.scss";
+@import "./modal.scss";

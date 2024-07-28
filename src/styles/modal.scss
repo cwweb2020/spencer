@@ -1,0 +1,46 @@
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  button {
+    padding: 4px 12px;
+    border-radius: 5px;
+    border: none;
+    background: blue;
+    color: white;
+    margin-top: 15px;
+  }
+}
+
+.modal {
+  background: #000000a8;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // color: white;
+
+  .container {
+    position: relative;
+    width: 600px;
+    height: 500px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+
+    svg {
+      position: absolute;
+      top: 2%;
+      right: 2%;
+      font-size: 29px;
+      color: orangered;
+      cursor: pointer;
+    }
+  }
+}

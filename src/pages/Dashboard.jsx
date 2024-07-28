@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Summary from "../components/Summary";
 
 import CategoryProgress from "../components/CategoryProgress";
@@ -7,12 +7,19 @@ import FloatButton from "../components/FloatButton";
 import Divider from "@mui/material/Divider";
 import ComparitionChart from "../components/ComparitionChart";
 import GastosDonut from "../components/GastosDonut";
+import ModalInput from "../components/ModalInput";
 
 const Dashboard = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const totalAmount = categories.reduce(
     (sum, category) => sum + category.amount,
     0
   );
+
+  // handles modal
+  const handleModal = () => {
+    setIsOpen(!isOpen);
+  };
 
   //
   return (
@@ -73,9 +80,12 @@ const Dashboard = () => {
       </div>
 
       <ComparitionChart />
-      <div className="float-button">
+      <ModalInput handleModal={handleModal} isOpen={isOpen} />
+      <div onClick={() => setIsOpen(true)} className="float-button">
         <FloatButton />
       </div>
+
+      <br />
       <br />
       <br />
       <br />
