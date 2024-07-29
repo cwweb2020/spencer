@@ -36,7 +36,7 @@ export const categories = [
     color: "#8C33FF",
   },
   {
-    name: "Entretenimiento",
+    name: "Entret.",
     amount: 500,
     iconPath: "/img/icons/icon-gastos/entret.svg",
     color: "#33FFD4",

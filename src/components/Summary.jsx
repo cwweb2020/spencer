@@ -7,7 +7,7 @@ const formatAmount = (amount) => {
 };
 
 const numbers = {
-  total: 28000,
+  total: 20000,
   ingreso: 38000,
   gasto: 18000,
 };

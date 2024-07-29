@@ -12,10 +12,26 @@
 // variables
 @import "./variables.scss";
 
+html {
+  overflow-x: hidden;
+}
 body {
   font-family: "Open Sans", sans-serif;
   //  background: #add8e63b;
   background: #c3f3c321;
+
+  overflow-x: hidden;
+
+  // changing styles in scroll bar
+  &::-webkit-scrollbar-thumb {
+    //  background-color: transparent;
+    // background-color: rgb(0, 149, 255);
+    background-color: #547071;
+    border-radius: 9px;
+  }
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
 }
 
 .float-button {
@@ -34,7 +50,7 @@ body {
 }
 
 a {
-  // text-decoration: none;
+  text-decoration: none;
 }
 
 // imports
