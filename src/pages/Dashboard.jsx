@@ -9,9 +9,11 @@ import ComparitionChart from "../components/ComparitionChart";
 import GastosDonut from "../components/GastosDonut";
 import ModalInput from "../components/ModalInput";
 import useIsMobile from "../hooks/useIsMobile";
+import { RiArrowDownDoubleLine } from "react-icons/ri";
 
 const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
   const totalAmount = categories.reduce(
     (sum, category) => sum + category.amount,
     0
@@ -22,6 +24,12 @@ const Dashboard = () => {
   // handles modal
   const handleModal = () => {
     setIsOpen(!isOpen);
+  };
+
+  //
+
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
   };
 
   //
@@ -76,7 +84,11 @@ const Dashboard = () => {
           <img src="img/imgs/plan1.png" alt="" />
         </div>
 
-        <section className="category-line-container">
+        <section
+          className={`category-line-container ${
+            isExpanded ? "expanded" : "collapsed"
+          } `}
+        >
           {categories
             .sort((a, b) => b.amount - a.amount)
             .map((category) => (
@@ -89,6 +101,16 @@ const Dashboard = () => {
                 color={category.color}
               />
             ))}
+          <br />
+          <br />
+          <span
+            className={`categorie-arrow-down ${
+              isExpanded ? "rotate-icon" : ""
+            }`}
+            onClick={toggleExpand}
+          >
+            <RiArrowDownDoubleLine />
+          </span>
         </section>
       </div>
       <br />
