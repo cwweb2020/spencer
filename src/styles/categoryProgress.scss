@@ -26,12 +26,15 @@
 .container {
   display: flex;
   align-items: flex-end;
-  margin: 10px 0;
+
+  margin: 10px 0 15px;
 }
 
 .icon {
-  width: 3em;
-  height: 3em;
+  // width: 3em;
+  // height: 3em;
+  width: 3.5em;
+  height: 3.5em;
   margin-right: 10px;
 }
 

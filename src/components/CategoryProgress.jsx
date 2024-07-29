@@ -1,5 +1,6 @@
 import React from "react";
 import numberFormatter from "number-formatter";
+import { Divider } from "@mui/material";
 
 //
 
@@ -10,27 +11,30 @@ const CategoryProgress = ({ category, amount, total, iconPath, color }) => {
 
   //
   return (
-    <div className="container">
-      <img src={iconPath} alt={category} className="icon" />
-      <div className="progress-container">
-        <span className="category-name">{category}</span>
-        <span
-          className="category-name"
-          style={{ left: "50%", fontWeight: "bold" }}
-        >
-          {percentage}%
-        </span>
-        <div className="progress-bar-container">
-          <div
-            className="progress-bar"
-            style={{ width: `${percentage}%`, backgroundColor: color }}
+    <>
+      <div className="container">
+        <img src={iconPath} alt={category} className="icon" />
+        <div className="progress-container">
+          <span className="category-name">{category}</span>
+          <span
+            className="category-name"
+            style={{ left: "50%", fontWeight: "bold" }}
           >
-            <span className="progress-text"> </span>
+            {percentage}%
+          </span>
+          <div className="progress-bar-container">
+            <div
+              className="progress-bar"
+              style={{ width: `${percentage}%`, backgroundColor: color }}
+            >
+              <span className="progress-text"> </span>
+            </div>
           </div>
         </div>
+        <span className="amount">${formattedAmount}</span>
       </div>
-      <span className="amount">${formattedAmount}</span>
-    </div>
+      <Divider />
+    </>
   );
 };
 
