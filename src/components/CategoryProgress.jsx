@@ -18,7 +18,7 @@ const CategoryProgress = ({ category, amount, total, iconPath, color }) => {
           <span className="category-name">{category}</span>
           <span
             className="category-name"
-            style={{ left: "50%", fontWeight: "bold" }}
+            style={{ right: "50%", fontWeight: "bold" }}
           >
             {percentage}%
           </span>

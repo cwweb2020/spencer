@@ -10,23 +10,29 @@ import GastosDonut from "../components/GastosDonut";
 import ModalInput from "../components/ModalInput";
 import useIsMobile from "../hooks/useIsMobile";
 import { RiArrowDownDoubleLine } from "react-icons/ri";
+import { useGetGastosData } from "../hooks/useGetGastosData";
+
+//
+
+//
 
 const Dashboard = () => {
+  const { data: gastos, error, isLoading } = useGetGastosData();
+
   const [isOpen, setIsOpen] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(true);
-  const totalAmount = categories.reduce(
-    (sum, category) => sum + category.amount,
+  const [isExpanded, setIsExpanded] = useState(false);
+  const totalAmount = gastos?.reduce(
+    (sum, gasto) => sum + Number(gasto.amount),
     0
   );
 
+  // hook mediaquery
   const isMobile = useIsMobile();
 
   // handles modal
   const handleModal = () => {
     setIsOpen(!isOpen);
   };
-
-  //
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
@@ -50,7 +56,7 @@ const Dashboard = () => {
         </>
       )}
 
-      <Summary />
+      <Summary totalExpense={totalAmount} />
 
       <br />
       <br />
@@ -89,16 +95,16 @@ const Dashboard = () => {
             isExpanded ? "expanded" : "collapsed"
           } `}
         >
-          {categories
-            .sort((a, b) => b.amount - a.amount)
-            .map((category) => (
+          {gastos
+            ?.sort((a, b) => b.amount - a.amount)
+            .map((gasto) => (
               <CategoryProgress
-                key={category.name}
-                category={category.name}
-                amount={category.amount}
+                key={gasto.id}
+                category={gasto.category}
+                amount={gasto.amount}
                 total={totalAmount}
-                iconPath={category.iconPath}
-                color={category.color}
+                iconPath={gasto.icon}
+                color={gasto.color}
               />
             ))}
           <br />

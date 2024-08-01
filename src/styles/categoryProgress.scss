@@ -33,6 +33,8 @@
   align-items: flex-end;
 
   margin: 10px 0 15px;
+
+  position: relative;
 }
 
 .icon {
@@ -48,6 +50,7 @@
   background-color: #e0e0e0;
   margin-right: 10px;
   position: relative;
+  // overflow: hidden;
 
   .category-name {
     position: absolute;
@@ -76,6 +79,11 @@
   font-weight: bold;
   font-family: $font-numbers;
   font-size: 0.95em;
+
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  font-size: 0.9em;
 }
 
 //  collapsed section
@@ -111,6 +119,7 @@
 
   svg {
     font-size: 28px;
+    color: floralwhite;
   }
 }
 
